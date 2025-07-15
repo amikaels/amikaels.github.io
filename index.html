@@ -3,296 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andreas Mikael Schønfeldt - CV</title>
+    <title>Andreas Mikael Schønfeldt - Interaktiv CV</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
+            background-color: #f0f2f5; /* Lys grå bakgrunn */
+            color: #333;
         }
-        .section-title {
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .header-bg {
+            background-color: #1a202c; /* Mørk bakgrunn for topptekst */
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
             position: relative;
-            padding-bottom: 0.5rem;
+        }
+        /* Removed .profile-pic styling as the image is removed */
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a202c;
             margin-bottom: 1.5rem;
-            font-size: 1.75rem; /* text-2xl */
-            font-weight: 600; /* font-semibold */
-            color: #1f2937; /* Darker gray for titles */
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px; /* Underline width */
-            height: 4px;
-            background-color: #3b82f6; /* Blue underline */
-            border-radius: 9999px; /* Fully rounded */
-        }
-        .icon {
-            display: inline-block;
-            width: 1.25em;
-            height: 1.25em;
-            vertical-align: text-bottom;
-            margin-right: 0.5rem;
-        }
-        .copy-button {
-            background-color: #3b82f6;
+        .toggle-button {
+            background-color: #4a5568;
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .copy-button:hover {
-            background-color: #2563eb;
+        .toggle-button:hover {
+            background-color: #2d3748;
+        }
+        .content-hidden {
+            display: none;
+        }
+        .card {
+            background-color: #f7fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+        .card-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+        }
+        .list-item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .list-item svg {
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+            color: #4a5568;
         }
     </style>
 </head>
 <body class="antialiased">
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        <!-- Header Section -->
-        <header class="bg-white shadow-lg rounded-xl p-6 mb-8 text-center">
-            <div class="flex flex-col items-center">
-                <h1 class="text-4xl font-bold text-gray-900 mb-2">ANDREAS MIKAEL SCHØNFELDT</h1>
-                <p class="text-xl text-blue-600 font-medium">Operativ Leder</p>
-                <div class="mt-4 flex flex-wrap justify-center gap-4 text-gray-700 text-sm">
-                    <span class="flex items-center"><svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.107 6.107l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>+47 470 46 125</span>
-                    <span id="emailDisplay" class="flex items-center cursor-pointer" title="Klikk for å kopiere e-post"><svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg><span id="emailText">amschoenfeldt@gmail.com</span></span>
-                    <span class="flex items-center"><svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>Edmunds Gate 9, 8480 Andenes</span>
-                    <a href="https://www.linkedin.com/in/andreas-mikael-schønfeldt-b7061033" target="_blank" class="flex items-center text-blue-600 hover:underline"><svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.3 5.4c.3-.3.3-.8 0-1.1L15.2 3.2c-.3-.3-.8-.3-1.1 0l-3.6 3.6c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.8.3 1.1 0l3.6-3.6zM10 12a2 2 0 100-4 2 2 0 000 4zM4 16a2 2 0 100-4 2 2 0 000 4zM10 4a2 2 0 100-4 2 2 0 000 4zM16 10a2 2 0 100-4 2 2 0 000 4zM4 10a2 2 0 100-4 2 2 0 000 4zM10 16a2 2 0 100-4 2 2 0 000 4zM16 4a2 2 0 100-4 2 2 0 000 4zM4 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>LinkedIn</a>
+
+    <div class="container">
+        <!-- Header Seksjon -->
+        <div class="header-bg rounded-t-xl">
+            <h1 class="text-4xl font-bold mb-2">ANDREAS MIKAEL SCHØNFELDT</h1>
+            <p class="text-xl font-light mb-4">OPERATIV LEDER</p>
+
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+                <a href="tel:+4747046125" class="flex items-center hover:underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    +47 470 46 125
+                </a>
+                <a href="mailto:amschoenfeldt@gmail.com" class="flex items-center hover:underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    amschoenfeldt@gmail.com
+                </a>
+                <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Edmunds Gate 9, 8480 Andenes
+                </span>
+                <a href="https://www.linkedin.com/in/andreas-mikael-sch%C3%B8nfeldt-b7061033" target="_blank" class="flex items-center hover:underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                    </svg>
+                    LinkedIn Profil
+                </a>
+            </div>
+        </div>
+
+        <!-- Hovedinnhold -->
+        <div class="p-8">
+            <!-- Om Meg Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Om Meg</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Jeg er født i 1987 i Stokmarknes, men har hatt gleden av å bo mange forskjellige steder både i Norge og i utlandet. I Norge har jeg bodd i Stavanger (hvor jeg gikk på Stavanger Katedralskole), Bergen (hvor jeg studerte ved UiB), Moss, Andenes og Sortland. I tillegg har jeg tilbrakt tre formative år av oppveksten min i Belgia, hvor jeg gikk på amerikansk high school.
+                    Disse erfaringene har gitt meg en bred forståelse av ulike kulturer og miljøer. Min tid i utlandet har også bidratt til at jeg snakker østlandsdialekt og behersker engelsk flytende. Jeg er en tilpasningsdyktig og lærevillig person som trives med nye utfordringer og å møte nye mennesker.
+                </p>
+            </section>
+
+            <!-- Sammendrag Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Sammendrag</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Erfaren og serviceinnstilt sikkerhetskontrollør med solid bakgrunn fra luftfart. Sterke lederegenskaper med erfaring som operativ leder og hovedtillitsvalgt. Trives med kundekontakt og har gode kommunikasjonsevner. Søker nye utfordringer der jeg kan bruke min kompetanse og erfaring til å bidra positivt. Erfaren Duty Manager med en dokumentert historie med arbeid i sikkerhets- og etterforskningsbransjen. Dyktig innen adgangskontroll, flysikkerhet, våpenhåndtering, overvåking og sikkerhet. Sterk operasjonell fagperson.
+                </p>
+            </section>
+
+            <!-- Ferdigheter Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Ferdigheter</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Kommunikasjon</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Serviceinnstilling</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Lederskap</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Ansvarlighet</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Tilpasningsdyktig</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Digital Kompetanse</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Læringsevne</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">CI/CD</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Cloud Computing</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Containers</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Adgangskontroll</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Flysikkerhet</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Våpenhåndtering</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Overvåking</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Sikkerhet</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Salg & Service</span>
                 </div>
-            </div>
-        </header>
+            </section>
 
-        <!-- Main Content Area -->
-        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column (About Me, Skills, Languages, Certifications) -->
-            <div class="lg:col-span-1 space-y-8">
-                <!-- About Me Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Om meg</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        Erfaren og serviceinnstilt leder med solid bakgrunn fra sikkerhets- og servicebransjen, samt offentlig sektor.
-                        Sterke lederegenskaper med erfaring som operativ leder og hovedtillitsvalgt. Trives med kundekontakt,
-                        har gode kommunikasjonsevner og en dyp forståelse for systemer og omstillingsprosesser.
-                        Søker nye utfordringer der jeg kan bruke min kompetanse og erfaring til å bidra positivt og utvikle meg videre.
-                    </p>
-                </section>
+            <!-- Arbeidserfaring Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Arbeidserfaring</h2>
 
-                <!-- Skills Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Ferdigheter</h2>
-                    <div class="space-y-4">
-                        <details class="group rounded-lg bg-gray-50 p-4 shadow-sm">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                                <h3 class="text-lg font-medium">Digital Kompetanse & Systemer</h3>
-                                <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </summary>
-                            <div class="mt-4 leading-relaxed text-gray-700">
-                                <p class="mb-2">Lang erfaring med operativ bruk og administrasjon av ulike systemer:</p>
-                                <ul class="list-disc list-inside ml-4 space-y-1">
-                                    <li>**Linux:** Daglig bruker siden 2005 (Fedora Silverblue, diverse serverdistroer).</li>
-                                    <li>CI/CD, Cloud Computing, Containers.</li>
-                                    <li>Erfaring med vedlikeholdssystemer og evne til å lære og tilpasse seg ny teknologi.</li>
-                                    <li>God kjennskap til Office-pakken og bruk av data som verktøy.</li>
-                                </ul>
-                            </div>
-                        </details>
-
-                        <details class="group rounded-lg bg-gray-50 p-4 shadow-sm">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                                <h3 class="text-lg font-medium">Ledelse & Teamutvikling</h3>
-                                <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </summary>
-                            <ul class="list-disc list-inside ml-4 mt-4 space-y-1 text-gray-700">
-                                <li>Lederskap, Teamutvikling, Personalansvar.</li>
-                                <li>Omstillingsledelse, Konflikthåndtering.</li>
-                                <li>Møteledelsesteknikk, Tale- og debatteknikk.</li>
-                                <li>Ansvarlighet, Beslutningstaking.</li>
-                            </ul>
-                        </details>
-
-                        <details class="group rounded-lg bg-gray-50 p-4 shadow-sm">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                                <h3 class="text-lg font-medium">Sikkerhet & Operativ Drift</h3>
-                                <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </summary>
-                            <ul class="list-disc list-inside ml-4 mt-4 space-y-1 text-gray-700">
-                                <li>Aviation Security, Access Control, Overvåkning.</li>
-                                <li>Sikkerhetsprosedyrer, Risikoanalyse, Risikovurdering.</li>
-                                <li>HMS-arbeid (40-timers grunnkurs), Brannvern, Førstehjelp.</li>
-                                <li>Avviksrapportering, Kriser og stressituasjoner.</li>
-                            </ul>
-                        </details>
-
-                        <details class="group rounded-lg bg-gray-50 p-4 shadow-sm">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                                <h3 class="text-lg font-medium">Administrasjon & Økonomi</h3>
-                                <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </summary>
-                            <ul class="list-disc list-inside ml-4 mt-4 space-y-1 text-gray-700">
-                                <li>Budsjettering & Planlegging, Kostnadskontroll.</li>
-                                <li>Lønnsarbeid, Mål- og resultatstyring.</li>
-                                <li>Strukturert arbeid, Informasjonsvirksomhet.</li>
-                            </ul>
-                        </details>
-
-                        <details class="group rounded-lg bg-gray-50 p-4 shadow-sm">
-                            <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                                <h3 class="text-lg font-medium">Personlige Egenskaper</h3>
-                                <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </summary>
-                            <ul class="list-disc list-inside ml-4 mt-4 space-y-1 text-gray-700">
-                                <li>Kommunikasjon, Serviceinnstilling.</li>
-                                <li>Læringsevne, Tilpasningsdyktig.</li>
-                                <li>Kundekontakt, Etikkforståelse.</li>
-                            </ul>
-                        </details>
+                <div class="card">
+                    <h3 class="card-title">Butikkmedarbeider / Nestkommanderende - Butikk</h3>
+                    <p class="card-subtitle">Coop Prix | Juni 2025 - Nåværende</p>
+                    <button class="toggle-button" onclick="toggleContent('coop-prix')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="coop-prix" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Ansvarlig for daglig drift og kundeservice i butikken.</li>
+                            <li class="list-item">Bidro til å opprettholde et rent og organisert butikkmiljø.</li>
+                            <li class="list-item">Assisterte kunder med spørsmål og veiledning.</li>
+                            <li class="list-item">Støttet butikksjefen i administrative oppgaver og personalledelse.</li>
+                        </ul>
                     </div>
-                </section>
+                </div>
 
-                <!-- Languages Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Språk</h2>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li>Norsk: Morsmål</li>
-                        <li>Engelsk: Flytende</li>
-                    </ul>
-                </section>
-
-                <!-- Certifications Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Sertifiseringer</h2>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li>LFS 101: Introduction to Linux</li>
-                        <li>LFS 162: Introduction to DevOps and Site Reliability Engineering</li>
-                        <li>Vekteropplæring Trinn 3</li>
-                        <li>Vekteropplæring Trinn 2</li>
-                        <li>Vekteropplæring Trinn 1</li>
-                        <li>Grunnkurs Vaktleder (Securitas AS)</li>
-                        <li>Forsvarets HMS-utdanning (40-timers grunnkurs)</li>
-                        <li>Hjertestarterkurs inkl. førstehjelp (Røde Kors)</li>
-                        <li>IONSCAN® CD-ROM computer-based training</li>
-                        <li>Tillitsvalgtkurs (Madla)</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Right Column (Work Experience, Education) -->
-            <div class="lg:col-span-2 space-y-8">
-                <!-- Work Experience Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Arbeidserfaring</h2>
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Butikkmedarbeider / Nestkommanderende - Butikk</h3>
-                            <p class="text-blue-600 font-medium">Coop Prix | Juni 2025 - Nåværende</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Ansvar for daglig drift og kundeservice.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Pedagogisk Medarbeider</h3>
-                            <p class="text-blue-600 font-medium">Andøy Kommune, Andenes Skole | August 2023 - April 2024</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Ansvarlig for oppfølging og veiledning av elever.</li>
-                                <li>Bidro til å skape et trygt og godt læringsmiljø.</li>
-                                <li>Samarbeidet med lærere og foreldre for å sikre elevenes trivsel og utvikling.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Operativ Leder</h3>
-                            <p class="text-blue-600 font-medium">Avarn Security Norge, Andenes Lufthavn | Oktober 2020 - Februar 2023</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Ledet og koordinerte sikkerhetskontrollører.</li>
-                                <li>Ansvarlig for planlegging og gjennomføring av sikkerhetsoppdrag.</li>
-                                <li>Personalansvar, lønnsarbeid og HMS-arbeid.</li>
-                                <li>Bidro aktivt i omstillingsprosesser ved overgang fra Securitas TAS til Avarn.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Securitykontrollør / Supervisor</h3>
-                            <p class="text-blue-600 font-medium">Avarn Security Norge / Securitas Norge | Mars 2020 - Oktober 2020 (Avarn), Desember 2015 - Februar 2020 (Securitas)</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Utført sikkerhetskontroll av reisende, bagasje og frakt i henhold til gjeldende lover og forskrifter.</li>
-                                <li>Ansvarlig for adgangskontroll og opplæring av nye ansatte.</li>
-                                <li>Ivaretok kundekontakt og sørget for en effektiv sikkerhetskontroll.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Hovedtillitsvalgt</h3>
-                            <p class="text-blue-600 font-medium">Parat | Februar 2018 - Januar 2020</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Hovedtillitsvalgt for Securitas, Skagen Lufthavn og SKYS.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Sikkerhetskontrollør</h3>
-                            <p class="text-blue-600 font-medium">Securitas Aviation Transport Security, Andøya Lufthavn | Juni 2012 - Mars 2015</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Sikkerhetskontrolltjenester, inkludert kontroll av reisende, bagasje, frakt, post og dokumenter.</li>
-                                <li>Utført adgangskontroll og tjenester for fraktleverandører.</li>
-                            </ul>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Velferdsassistent og Tillitsvalgt</h3>
-                            <p class="text-blue-600 font-medium">Luftforsvaret | Januar 2007 - Januar 2008</p>
-                            <ul class="list-disc list-inside ml-4 text-gray-700 mt-1">
-                                <li>Jobbet selvstendig med arbeidsoppgaver innen velferd for soldater.</li>
-                                <li>Variert arbeid med forskjellige firma, og opprettholde kontakt med regional ledelse.</li>
-                                <li>Jobbet turnus som hovedtillitsvalgt ved CRC-Sørreisa (HMS, soldatenes røst, møteleder).</li>
-                            </ul>
-                        </div>
+                <div class="card">
+                    <h3 class="card-title">Pedagogisk Medarbeider</h3>
+                    <p class="card-subtitle">Andøy Kommune, Andenes Skole | August 2023 - April 2024</p>
+                    <button class="toggle-button" onclick="toggleContent('andoy-kommune')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="andoy-kommune" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Ansvarlig for oppfølging og veiledning av elever.</li>
+                            <li class="list-item">Bidro til å skape et trygt og godt læringsmiljø.</li>
+                            <li class="list-item">Samarbeidet med lærere og foreldre for å sikre elevenes trivsel og utvikling.</li>
+                        </ul>
                     </div>
-                </section>
+                </div>
 
-                <!-- Education Section -->
-                <section class="bg-white shadow-lg rounded-xl p-6">
-                    <h2 class="section-title">Utdanning</h2>
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">LFS 101: Introduction to Linux & LFS 162: Intro DevOps & SRE</h3>
-                            <p class="text-blue-600 font-medium">The Linux Foundation | 2024 - 2025</p>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Studier i Midtøsten og Nord-Afrika</h3>
-                            <p class="text-blue-600 font-medium">Universitetet i Bergen | 2008 - 2010</p>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="text-xl font-semibold text-gray-800">High School Diploma</h3>
-                            <p class="text-blue-600 font-medium">SHAPE American High School | 2001 - 2004</p>
-                        </div>
+                <div class="card">
+                    <h3 class="card-title">Operativ Leder</h3>
+                    <p class="card-subtitle">Avarn Security Norge, Andenes Lufthavn | Oktober 2020 - Februar 2023</p>
+                    <button class="toggle-button" onclick="toggleContent('avarn-operativ')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="avarn-operativ" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Ledet og koordinerte sikkerhetskontrollører.</li>
+                            <li class="list-item">Ansvarlig for planlegging og gjennomføring av sikkerhetsoppdrag.</li>
+                            <li class="list-item">Personalansvar.</li>
+                            <li class="list-item">Lønnsarbeid.</li>
+                            <li class="list-item">HMS-arbeid.</li>
+                        </ul>
                     </div>
-                </section>
-            </div>
-        </main>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Sikkerhetskontrollør / Supervisor</h3>
+                    <p class="card-subtitle">Avarn Security Norge, Nordland County | Mars 2020 - Oktober 2020</p>
+                    <button class="toggle-button" onclick="toggleContent('avarn-sikkerhetssupervisor')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="avarn-sikkerhetssupervisor" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Utføre sikkerhetskontroll av reisende, bagasje og frakt i henhold til gjeldende lover og forskrifter.</li>
+                            <li class="list-item">Ansvarlig for adgangskontroll og opplæring av nye ansatte.</li>
+                            <li class="list-item">Ivaretok kundekontakt og sørget for en effektiv sikkerhetskontroll.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Sikkerhetskontrollør / Supervisor</h3>
+                    <p class="card-subtitle">Securitas Norge, Andenes & Skagen Lufthavn | Desember 2015 - Februar 2020</p>
+                    <button class="toggle-button" onclick="toggleContent('securitas-sikkerhetssupervisor')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="securitas-sikkerhetssupervisor" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Sikkerhetskontrolltjenester omfatter i hovedsak kontroll av reisende, bagasje, frakt, post og dokumenter.</li>
+                            <li class="list-item">Utfører adgangskontroll.</li>
+                            <li class="list-item">Utfører tjenester for fraktleverandører.</li>
+                            <li class="list-item">Vaktleder har ansvar for at vaktlaget utfører kontrollen etter gjeldende lover og forskrifter.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Hovedtillitsvalgt</h3>
+                    <p class="card-subtitle">Parat, Securitas, Skagen Lufthavn og SKYS | Februar 2018 - Januar 2020</p>
+                    <button class="toggle-button" onclick="toggleContent('parat-tillitsvalgt')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="parat-tillitsvalgt" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Representerte ansatte og ivaretok deres interesser.</li>
+                            <li class="list-item">Forhandlet med ledelsen om arbeidsforhold og lønn.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Sikkerhetskontrollør</h3>
+                    <p class="card-subtitle">Securitas Aviation Transport Security, Andøya Lufthavn | Juni 2012 - Mars 2015</p>
+                    <button class="toggle-button" onclick="toggleContent('securitas-sikkerhetskontrollor')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="securitas-sikkerhetskontrollor" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Sikkerhetskontrolltjenester omfatter i hovedsak kontroll av reisende, bagasje, frakt, post og dokumenter.</li>
+                            <li class="list-item">Utfører adgangskontroll.</li>
+                            <li class="list-item">Utfører tjenester for fraktleverandører.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Butikkarbeider</h3>
+                    <p class="card-subtitle">Rema 1000 | Juni 2011 - Mai 2012</p>
+                    <button class="toggle-button" onclick="toggleContent('rema1000')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="rema1000" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Ansvarlig for varepåfylling, kassearbeid og kundeservice.</li>
+                            <li class="list-item">Bidro til å opprettholde butikkens standarder for renslighet og orden.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Teknisk vask og inspektør</h3>
+                    <p class="card-subtitle">Ayanda | August 2010 - November 2010</p>
+                    <button class="toggle-button" onclick="toggleContent('ayanda')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="ayanda" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Utført teknisk vask og inspeksjon av utstyr.</li>
+                            <li class="list-item">Sikret kvalitet og overholdelse av standarder.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Resepsjonist</h3>
+                    <p class="card-subtitle">Andrikken Hotell, Andenes | Juni 2010 - August 2010</p>
+                    <button class="toggle-button" onclick="toggleContent('andrikken')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="andrikken" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Ansvarlig for kundebehandling, innsjekk/utsjekk og booking.</li>
+                            <li class="list-item">Håndterte telefonhenvendelser og ga informasjon til gjester.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Velferdsassistent og Tillitsvalgt</h3>
+                    <p class="card-subtitle">Luftforsvaret | Januar 2007 - Januar 2008</p>
+                    <button class="toggle-button" onclick="toggleContent('luftforsvaret')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="luftforsvaret" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Jobbet selvstendig med arbeidsoppgaver innen velferd for soldater.</li>
+                            <li class="list-item">Variert arbeid med forskjellige firma, og opprettholde kontakt med regional ledelse.</li>
+                            <li class="list-item">Jobbet turnus som hovedtillitsvalgt ved CRC-Sørreisa. Arbeidsoppgaver: HMS, soldatenes røst, møteleder, etc.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Utdanning Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Utdanning</h2>
+
+                <div class="card">
+                    <h3 class="card-title">LFS 162: Introduction to DevOps and Site Reliability Engineering</h3>
+                    <p class="card-subtitle">THE LINUX FOUNDATION | Januar 2025</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">LFS 101: Introduction to Linux</h3>
+                    <p class="card-subtitle">THE LINUX FOUNDATION | November 2024</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Studier i Midtøsten og Nord-Afrika</h3>
+                    <p class="card-subtitle">Universitetet i Bergen | 2008-2010</p>
+                    <button class="toggle-button" onclick="toggleContent('uib-education')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="uib-education" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Examen facultatum, Akademisk skriving (C)</li>
+                            <li class="list-item">Examen facultatum, Tekst og kultur- eksamensmodellen (C)</li>
+                            <li class="list-item">Examen philosophicum - skoleeksamen (C)</li>
+                            <li class="list-item">Oversikt over Midtøstens historie (C)</li>
+                            <li class="list-item">Innføring i Midtøstenkunnskap. Kultur, religion og samfunn: de lange linjene. (E)</li>
+                            <li class="list-item">Fordypning i Midtøstens historie (C)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">SHAPE American High School</h3>
+                    <p class="card-subtitle">2001-2004</p>
+                </div>
+
+            </section>
+
+            <!-- Sertifiseringer Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Sertifiseringer</h2>
+
+                <div class="card">
+                    <h3 class="card-title">Vekterkurs Trinn 3</h3>
+                    <p class="card-subtitle">Securitas AS | Mars 2013</p>
+                    <button class="toggle-button" onclick="toggleContent('vekterkurs-3')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="vekterkurs-3" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Etikk</li>
+                            <li class="list-item">Konflikthåndtering</li>
+                            <li class="list-item">Risikovurdering og beredskapsplanlegging</li>
+                            <li class="list-item">Jus</li>
+                            <li class="list-item">Brannvern</li>
+                            <li class="list-item">Tekniske og fysiske sikringstiltak</li>
+                            <li class="list-item">Helse, miljø og sikkerhet</li>
+                            <li class="list-item">Førstehjelp</li>
+                            <li class="list-item">Service og kvalitet</li>
+                            <li class="list-item">Skriftlig prøve</li>
+                            <li class="list-item">Vektertjenester</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Grunnkurs Vaktleder</h3>
+                    <p class="card-subtitle">Securitas AS | Desember 2014</p>
+                    <button class="toggle-button" onclick="toggleContent('vaktleder-kurs')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="vaktleder-kurs" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Aviation modul 1-11, 46-49</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Hjertestarterkurs inkl. førstehjelp (rep.3 timer)</h3>
+                    <p class="card-subtitle">Røde Kors Førstehjelp | April 2024</p>
+                    <button class="toggle-button" onclick="toggleContent('forstehjelp-kurs')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="forstehjelp-kurs" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Kunnskap redder liv, pasientundersøkelse, sideleie, fremmedlegeme i hals.</li>
+                            <li class="list-item">Hva er plutselig hjertestans?, hjertesykdommer, hva er en hjertestarter?, bruk av hjertestarter.</li>
+                            <li class="list-item">Vedlikehold av kunnskap, oppbevaring og vedlikehold av hjertestarteren, hvem hjelper redderen?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Forsvarets HMS Kurs (Tillitsvalgtkurs)</h3>
+                    <p class="card-subtitle">Forsvaret | 2007</p>
+                    <button class="toggle-button" onclick="toggleContent('hms-kurs')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="hms-kurs" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Tillitsmannsordningen i Forsvaret</li>
+                            <li class="list-item">Selvmordsforebyggende arbeid</li>
+                            <li class="list-item">Ombudsmannsnemnda for Forsvaret</li>
+                            <li class="list-item">Militær rettslære</li>
+                            <li class="list-item">Disiplinære forhold</li>
+                            <li class="list-item">Møteledelsesteknikk</li>
+                            <li class="list-item">Helse, Miljø og Sikkerhet</li>
+                            <li class="list-item">Narkotikaproblematikk</li>
+                            <li class="list-item">Tale- og debatteknikk</li>
+                            <li class="list-item">Informasjonsvirksomhet</li>
+                            <li class="list-item">Etikkundervisning</li>
+                            <li class="list-item">Organisasjonslære</li>
+                            <li class="list-item">Ansvar i tilknytning til arbeid med arbeidsmiljø</li>
+                            <li class="list-item">Verneombudsrollen</li>
+                            <li class="list-item">Arbeidsmiljøutvalg</li>
+                            <li class="list-item">Verne- og helsepersonale</li>
+                            <li class="list-item">Tilsynsmyndigheter</li>
+                            <li class="list-item">Systematisk arbeid med arbeidsmiljø</li>
+                            <li class="list-item">Psykososiale forhold</li>
+                            <li class="list-item">Kjemiske miljøfaktorer</li>
+                            <li class="list-item">Fysiske miljøfaktorer/ergonomi</li>
+                            <li class="list-item">Kartleggingsmetodikk/vernerunder</li>
+                            <li class="list-item">Sikkerhet på arbeidsplassen</li>
+                            <li class="list-item">Risikoanalyse</li>
+                            <li class="list-item">Risikovurdering</li>
+                            <li class="list-item">Arbeidsulykker og avviksrapportering</li>
+                            <li class="list-item">Kriser og stressituasjoner</li>
+                            <li class="list-item">Lover og forskrifter (Arbeidsmiljøloven, Forsvarets verdigrunnlag, Forsvarssjefens rusmiddeldirektiv, Internkontrollforskrifter, Sikkerhetsbestemmelser)</li>
+                            <li class="list-item">Kultur- og etikkforståelse</li>
+                            <li class="list-item">Miljøvern</li>
+                            <li class="list-item">Rusforebyggende arbeid</li>
+                            <li class="list-item">Sykefraværsarbeid</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Vekterkurs Trinn 2</h3>
+                    <p class="card-subtitle">Vekterskolen | Oktober 2007</p>
+                    <button class="toggle-button" onclick="toggleContent('vekterkurs-2')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Vis detaljer
+                    </button>
+                    <div id="vekterkurs-2" class="content-hidden mt-4">
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li class="list-item">Etikk</li>
+                            <li class="list-item">Konflikthåndtering</li>
+                            <li class="list-item">Jus</li>
+                            <li class="list-item">Brannvern</li>
+                            <li class="list-item">Helse, miljø og sikkerhet</li>
+                            <li class="list-item">Førstehjelp</li>
+                            <li class="list-item">Skriftlig prøve</li>
+                            <li class="list-item">Introduksjon til vaktbransjen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">IONSCAN® CD-ROM computer-based training</h3>
+                    <p class="card-subtitle">BARRINGER INSCAN® TRAINING | Juni 2012</p>
+                </div>
+
+            </section>
+
+            <!-- Språk Seksjon -->
+            <section class="mb-8">
+                <h2 class="section-title">Språk</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Norsk (Morsmål)</span>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Engelsk (Flytende)</span>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <script>
-        // JavaScript for copying email to clipboard
-        document.getElementById('emailDisplay').addEventListener('click', function() {
-            const emailText = document.getElementById('emailText').innerText;
-            const tempInput = document.createElement('input');
-            tempInput.value = emailText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            // Using a simple alert for demonstration. In a real application, a custom modal or toast notification would be preferred.
-            alert('E-post kopiert til utklippstavlen!');
-        });
+        // JavaScript for å veksle mellom synlig og skjult innhold
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            const button = element.previousElementSibling; // Få tak i knappen rett før innholdet
+
+            if (element.classList.contains('content-hidden')) {
+                element.classList.remove('content-hidden');
+                button.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    Vis detaljer
+                `;
+            } else {
+                element.classList.add('content-hidden');
+                button.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    Skjul detaljer
+                `;
+            }
+        }
     </script>
 </body>
 </html>
+
